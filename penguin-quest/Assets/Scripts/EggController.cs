@@ -26,6 +26,15 @@ public class EggController : MonoBehaviour {
 			//fade out egg and destroy
 			iTween.FadeTo(this.gameObject,0.0f,1.0f);
 			//animate out the pillar in y axis downwards.
+
+			GameObject parentPillar = this.transform.parent.gameObject;
+			parentPillar.GetComponent<Rigidbody2D>().velocity=Vector2.zero;
+			iTween.MoveTo(parentPillar,new Vector3(parentPillar.transform.localPosition.x
+			                                       ,parentPillar.transform.localPosition.y-5.0f,
+			                                       parentPillar.transform.localPosition.z),2.0f);
+
 		}
+
 	}
+	
 }
