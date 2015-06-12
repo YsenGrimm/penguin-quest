@@ -15,6 +15,10 @@ public class AutoDestroy : MonoBehaviour {
 			//destroy self
 			Destroy(this.gameObject);
 		}
+		else if (this.transform.localPosition.y < -10.0f) { //means out of camera vision downward
+			//destroy self
+			Destroy(this.gameObject);
+		}
 	
 	}
 }
