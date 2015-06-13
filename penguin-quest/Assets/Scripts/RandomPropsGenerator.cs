@@ -6,7 +6,7 @@ public class RandomPropsGenerator : MonoBehaviour
 	public bool gen=true;
 	public float seconds=0;
 	public int updateCounter=0;
-	public int maxRange=200;
+	public int maxRange=500;
 
 	public Vector2 playerPosition=new Vector2(0,0);
 	public GameObject PenguinPlayer;
@@ -18,12 +18,17 @@ public class RandomPropsGenerator : MonoBehaviour
 	}
 	void Update()
 	{
-
-		if(gen)
-		{
+		if(gen){
 			gen=false;
-			//Invoke("GenerateNewObstacle" , Random.Range(4,8));
-			Invoke("GenerateNewEggs",5.0f);
+			int rand = Random.Range(0,2);
+			if(rand==0)
+				Invoke("GenerateIceFloes",5.0f);
+			else if(rand==1)
+				Invoke("GenerateNewEggs",10.0f);
+//			else
+//				Invoke("GenerateNewObstacle",15.0f);
+
+
 		}
 		else
 			updateCounter++;
@@ -32,10 +37,6 @@ public class RandomPropsGenerator : MonoBehaviour
 				gen=true;
 				updateCounter=0;
 			}
-
-	
-//		if(PenguinPlayer.transform.position.y >= 6.206661 || PenguinPlayer.transform.position.y < -12.7736)
-//			RestartTheGame();
 	}
 
 	void RestartTheGame()
@@ -47,12 +48,13 @@ public class RandomPropsGenerator : MonoBehaviour
 	{
 		//pick obstancle from the path
 		Instantiate(Resources.Load("Prefabs/Pillar") as GameObject,new Vector3(this.transform.localPosition.x,
-		                                                                       Random.Range(-3.5f,-4.5f),
+		                                                                       Random.Range(-4.5f,-5.5f),
 		                                                                       this.transform.localPosition.z),Quaternion.identity);
 	}
 
 	void GenerateNewEggs()
 	{
+		CancelInvoke ("GenerateNewEggs");
 		// spawn at random generator position
 		Instantiate(Resources.Load("Prefabs/PillarWithEgg") as GameObject,new Vector3(this.transform.localPosition.x,
 		                                                                              Random.Range(-3.5f,-4.5f),
@@ -62,8 +64,20 @@ public class RandomPropsGenerator : MonoBehaviour
 
 	void GenerateIceFloes()
 	{
+		CancelInvoke("GenerateIceFloes");
+		int rand = Random.Range (0, 2);
+		string icefloeName = "";
 		// spawn at random generator position
-		Instantiate(Resources.Load("Prefabs/IceFloe") as GameObject,Vector3.zero,Quaternion.identity);
+
+		if (rand == 0)
+			icefloeName = "IceFloe_Small";
+		else
+			icefloeName = "IceFloe_Large";
+
+		if(icefloeName!="")
+			Instantiate (Resources.Load ("Prefabs/" + icefloeName) as GameObject, new Vector3 (this.transform.localPosition.x - 5f,
+			                                                                             Random.Range (-2.3f, -3.3f),
+			                                                                             this.transform.localPosition.z),Quaternion.identity);
 	}
 	
 }

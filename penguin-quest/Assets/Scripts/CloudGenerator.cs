@@ -23,6 +23,5 @@ public class CloudGenerator : MonoBehaviour {
 	}
 	void Start (){
 		createClouds();
-		
-	}
+		}
 }
