@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour {
 	public List<GameObject> initialObjList = new List<GameObject>(); // no movement until you press space
 
 	bool randomFunc = false;
+
+	public float jumpForce=100f;
 	// Update is called once per frame
 	void Update () {
 	
@@ -35,7 +37,7 @@ public class PlayerController : MonoBehaviour {
 					randomFunc=true;
 					}
 				penguin.velocity=Vector2.zero;
-				penguin.AddForce(new Vector2(0,200));
+				penguin.AddForce(new Vector2(0,jumpForce));
 			}
 	}
 

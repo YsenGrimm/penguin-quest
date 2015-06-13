@@ -1134,6 +1134,7 @@ MonoBehaviour:
   - {fileID: 731037286}
   - {fileID: 1527920571}
   - {fileID: 320098708}
+  jumpForce: 250
 --- !u!234 &1343886478
 SliderJoint2D:
   m_ObjectHideFlags: 0
