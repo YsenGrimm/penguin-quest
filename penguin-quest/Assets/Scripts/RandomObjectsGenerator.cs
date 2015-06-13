@@ -18,7 +18,7 @@ public class RandomObjectsGenerator : MonoBehaviour {
 	public void randomSelectionIndex(){	
 
 		CancelInvoke("randomSelectionIndex");
-		index  = Random.Range(0,4);
+		index  = Random.Range(0,5);
 		objectOnlastGenPos=false;
 		Invoke("GenerateObjectsRandomly",0.5f);
 	}
@@ -60,6 +60,15 @@ public class RandomObjectsGenerator : MonoBehaviour {
 			lastGeneratedObject = Instantiate(Resources.Load("Prefabs/Orca") as GameObject,new Vector3(10.0f,Random.Range(-4.5f,-5.0f),0),
 			                                  																Quaternion.identity) as GameObject;
 			objectOnlastGenPos=true;
+		}break;
+
+		case 4:{
+			lastGeneratedObject = Instantiate(Resources.Load("Prefabs/IceSpikes") as GameObject,new Vector3(15.0f,
+			                                                                                                Random.Range(-3.5f, -4.0f),0),
+			                                  Quaternion.identity) as GameObject;
+			
+			objectOnlastGenPos=true;
+			
 		}break;
 
 		default: 

@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour {
 				 this.gameObject.GetComponent<Animator>().enabled=true;
 				}
 			else{
+				penguin.MoveRotation(15.0f);
 				penguin.velocity=Vector2.zero;
 				penguin.AddForce(new Vector2(0,jumpForce));
 				}
