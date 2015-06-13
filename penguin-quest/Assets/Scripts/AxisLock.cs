@@ -12,7 +12,7 @@ public class AxisLock : MonoBehaviour {
 		SliderJoint2D slider = GetComponent<SliderJoint2D>();
 		
 		slider.connectedAnchor = new Vector2(transform.position.x, transform.position.y);
-		slider.collideConnected = true;
+		slider.enableCollision = true;
 		
 		if (lockAxis == AxisDirection.x) {
 			slider.angle = 90;
