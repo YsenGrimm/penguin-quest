@@ -4,7 +4,6 @@ using System.Collections;
 enum AxisDirection {
 	x, y
 }
-
 [RequireComponent (typeof (SliderJoint2D))]
 public class AxisLock : MonoBehaviour {
 	[SerializeField] AxisDirection lockAxis;

@@ -14,12 +14,8 @@ public class RandomObjectsGenerator : MonoBehaviour {
 
 	int index = 0;
 	// Use this for initialization
-	void Start(){
-		randomSelectionIndex ();
-		
-	}
 
-	void randomSelectionIndex(){	
+	public void randomSelectionIndex(){	
 
 		CancelInvoke("randomSelectionIndex");
 		index  = Random.Range(0,4);

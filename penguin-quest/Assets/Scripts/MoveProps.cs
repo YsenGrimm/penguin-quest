@@ -3,7 +3,7 @@ using System.Collections;
 
 public class MoveProps : MonoBehaviour {
 
-	public Vector2 velocity = Vector2.zero;
+	Vector2 velocity = Vector2.zero;
 	float xSpeed;
 	// Use this for initialization
 	
