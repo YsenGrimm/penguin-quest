@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class PlayerController : MonoBehaviour {
 	
 	// Use this for initialization;
+	public GameObject timerObj;
 	public Rigidbody2D penguin;
 	public GameObject startPoint;
 
@@ -12,39 +13,65 @@ public class PlayerController : MonoBehaviour {
 
 	bool randomFunc = false;
 	bool isfirstJump = false;
+	bool hasAngleSet = false;
 	public float jumpForce=100f;
 	// Update is called once per frame
 	void Update () {
 	
 		if(Input.GetKeyUp("space")){
+				hasAngleSet=false;
 				// now move the start point pillar to left and start scroll
 				if(startPoint!=null){
 					startPoint.GetComponent<MoveProps>().enabled=true;
 					}
 
-			if(initialObjList.Count>0){
-					for(int i =0;i<initialObjList.Count;i++){
-						GameObject obj = (GameObject)initialObjList[i];
-						obj.GetComponent<MoveProps>().enabled=true;
-					}
-			}
-			else if(randomFunc==false && initialObjList.Count<=0){
-					Debug.Log("enable random");
-					// now generate random objects
-					RandomObjectsGenerator randomObjCtrl = GameObject.Find("RandomGenerator").GetComponent<RandomObjectsGenerator>();
-					randomObjCtrl.enabled=true;
-					randomObjCtrl.randomSelectionIndex();
-					randomFunc=true;
-					}
+				//set the timer 
+				 timerObj.GetComponent<CountDownTimer>().enabled=true;
+
+				if(initialObjList.Count>0){
+						for(int i =0;i<initialObjList.Count;i++){
+							GameObject obj = (GameObject)initialObjList[i];
+							obj.GetComponent<MoveProps>().enabled=true;
+						}
+				}
+				else if(randomFunc==false && initialObjList.Count<=0){
+						Debug.Log("enable random");
+						// now generate random objects
+						RandomObjectsGenerator randomObjCtrl = GameObject.Find("RandomGenerator").GetComponent<RandomObjectsGenerator>();
+						randomObjCtrl.enabled=true;
+						randomObjCtrl.randomSelectionIndex();
+						randomFunc=true;
+						}
 
 			if(isfirstJump==false){
 				 this.gameObject.GetComponent<Animator>().enabled=true;
 				}
 			else{
+			
+//				Vector2 velocityDir = penguin.velocity;
+//				if (velocityDir.y < 0)
+//					penguin.MoveRotation (-20.0f);
+//				else if (velocityDir.y > 0)
+//					penguin.MoveRotation (20.0f);
+
+				penguin.MoveRotation (20.0f); //face up
 				penguin.velocity=Vector2.zero;
+				penguin.angularVelocity = 0f;
 				penguin.AddForce(new Vector2(0,jumpForce));
-				}
+				if(hasAngleSet==false)
+					Invoke("setAngleDown",0.5f);
+			}
 		}
+
+	}
+
+	void setAngleDown(){
+		penguin.MoveRotation (-20.0f);
+		hasAngleSet = true;
+	}
+	void setBackAngleToZero(){
+		penguin.MoveRotation (0);
+		hasAngleSet = true;
 	}
 
 	public void removeObjFromList(GameObject obj){
