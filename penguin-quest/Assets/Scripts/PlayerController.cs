@@ -34,14 +34,6 @@ public class PlayerController : MonoBehaviour {
 							obj.GetComponent<MoveProps>().enabled=true;
 						}
 				}
-				else if(randomFunc==false && initialObjList.Count<=0){
-						Debug.Log("enable random");
-						// now generate random objects
-						RandomObjectsGenerator randomObjCtrl = GameObject.Find("RandomGenerator").GetComponent<RandomObjectsGenerator>();
-						randomObjCtrl.enabled=true;
-						randomObjCtrl.randomSelectionIndex();
-						randomFunc=true;
-						}
 
 			if(isfirstJump==false){
 				 this.gameObject.GetComponent<Animator>().enabled=true;
@@ -55,6 +47,16 @@ public class PlayerController : MonoBehaviour {
 					Invoke("setAngleDown",0.5f);
 			}
 		}
+
+		if(randomFunc==false && initialObjList.Count<=3){
+			Debug.Log("enable random");
+			// now generate random objects
+			RandomObjectsGenerator randomObjCtrl = GameObject.Find("RandomGenerator").GetComponent<RandomObjectsGenerator>();
+			randomObjCtrl.enabled=true;
+			randomObjCtrl.randomSelectionIndex();
+			randomFunc=true;
+		}
+
 
 	}
 
@@ -75,10 +77,10 @@ public class PlayerController : MonoBehaviour {
 
 	public void changeTextureToSlide(){
 		this.gameObject.GetComponent<SpriteRenderer> ().sprite = Resources.Load ("Art/penguin_sliding", typeof(Sprite)) as Sprite;
-		BoxCollider2D playerCol = this.gameObject.GetComponent<BoxCollider2D>();
-		playerCol.size = new Vector2(3.5f,1.803128f);
-		playerCol.offset = new Vector2(0f,-0.02656f);
+		PolygonCollider2D playerCol = this.gameObject.GetComponent<PolygonCollider2D>();
+		DestroyObject(playerCol);
 
+		this.gameObject.AddComponent<PolygonCollider2D>();
 		//update position of player's parent, get world position
 
 		Vector3 worldPos = transform.TransformPoint(this.gameObject.transform.localPosition);

@@ -9,6 +9,8 @@ TagManager:
   - Eggs
   - IceFloe
   - Enemy
+  - Waves
+  - Spikes
   layers:
   - Default
   - TransparentFX

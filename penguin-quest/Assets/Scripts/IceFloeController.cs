@@ -10,7 +10,6 @@ public class IceFloeController : MonoBehaviour {
 		if (col.gameObject.tag == "Player") {
 			//play icefloe wiggle animation
 			iTween.ShakeRotation(this.gameObject,new Vector3(0,0,5f),0.5f);
-
 			}
 
 	}

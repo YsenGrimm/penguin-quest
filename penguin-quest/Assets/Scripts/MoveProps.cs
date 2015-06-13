@@ -9,15 +9,9 @@ public class MoveProps : MonoBehaviour {
 	
 	void Start () {
 		if (this.gameObject.tag.Equals("Orca"))
-			xSpeed = -3.0f;
-//		else if (this.gameObject.tag.Equals("Eggs"))
-//			xSpeed = -3;
-//		else if (this.gameObject.tag.Equals("Seal"))
-//			xSpeed = -2;
-//		else if (this.gameObject.tag.Equals("IceFloe"))
-//			xSpeed = -1;
+			xSpeed = -6.0f;
 		else
-			xSpeed = -2.0f;
+			xSpeed = Random.Range(-3.0f,-5.0f);
 
 		velocity = new Vector2(xSpeed, 0);
 		GetComponent<Rigidbody2D>().velocity=velocity;
