@@ -727,7 +727,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 481505300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.94000006, y: -1.88, z: 0}
+  m_LocalPosition: {x: -6.94000006, y: -1.88, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 679238116}
@@ -765,7 +765,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 391, y: 188}
+  m_AnchoredPosition: {x: 552, y: 366}
   m_SizeDelta: {x: 84.6999969, y: 36.0999985}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &489582137
@@ -893,7 +893,7 @@ PolygonCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 526399732}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
@@ -1727,7 +1727,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -434.5, y: 187.199997}
+  m_AnchoredPosition: {x: -605, y: 364}
   m_SizeDelta: {x: 63.5999985, y: 41.5}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1154247524
@@ -1893,7 +1893,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1327318415}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.96999979, y: -3.91000009, z: 0}
+  m_LocalPosition: {x: -6.96999979, y: -3.91000009, z: -1}
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2160,7 +2160,7 @@ PolygonCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1443599260}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
@@ -2438,7 +2438,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -370.799988, y: 187.700027}
+  m_AnchoredPosition: {x: -528, y: 362}
   m_SizeDelta: {x: 84.6999969, y: 36.0999985}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1647731137
@@ -2886,7 +2886,7 @@ PolygonCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2062848669}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
@@ -3122,7 +3122,7 @@ PolygonCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2068689324}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
