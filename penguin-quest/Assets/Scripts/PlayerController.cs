@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour {
 	public Rigidbody2D penguin;
 	public GameObject startPoint;
 
+	public float propsSpeed=3.0f;
+
 	void Start () {
 		playerState= PlayerStates.k_idle;
 	}
@@ -23,23 +25,18 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 	
 		if(Input.GetKeyUp("space")){
-		 
-			if(playerState== PlayerStates.k_idle){
 				// only then move the start point pillar to left
 				if(startPoint!=null)
 					startPoint.GetComponent<MoveProps>().enabled=true;
 
-				playerState= PlayerStates.k_jump;
-
 				penguin.velocity=Vector2.zero;
 				penguin.AddForce(new Vector2(0,250));
 
-				Invoke("changeState",0.5f);
 				}
-			else if(playerState== PlayerStates.k_sliding){
-					penguin.velocity=new Vector2(3, 0);
-				}
-		}
+//			else if(playerState== PlayerStates.k_sliding){
+//					penguin.velocity=new Vector2(3, 0);
+//				}
+//		}
 	}
 
 	void changeState(){
