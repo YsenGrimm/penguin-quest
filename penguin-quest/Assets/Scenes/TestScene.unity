@@ -605,7 +605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectOnlastGenPos: 0
   playerPosition: {x: 0, y: 0}
-  PenguinPlayer: {fileID: 1343886471}
+  PenguinPlayer: {fileID: 0}
   lastGeneratedObject: {fileID: 0}
   lastGeneratedObjPos: {x: 0, y: 0}
 --- !u!114 &943822006
@@ -762,6 +762,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b16b2f8d7cc444dfd81fb652edaed773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCtrl: {fileID: 0}
+  randomObjCtrl: {fileID: 0}
 --- !u!114 &1327318417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,7 +775,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e005313d047414b45bbbe9409b45c3b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: -3, y: 0}
 --- !u!50 &1327318418
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -968,6 +969,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   penguin: {fileID: 1343886474}
   startPoint: {fileID: 1327318415}
+  initialObjList: []
+  jumpForce: 100
 --- !u!1 &1443599260
 GameObject:
   m_ObjectHideFlags: 0
