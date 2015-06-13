@@ -203,7 +203,7 @@ GameObject:
   - 111: {fileID: 526399734}
   m_Layer: 0
   m_Name: Wave-C
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -518,7 +518,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 444924, guid: 75d9f27e5e9474901bacaf1ec711e9a6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 8.93999958
+      value: 6.69999981
       objectReference: {fileID: 0}
     - target: {fileID: 444924, guid: 75d9f27e5e9474901bacaf1ec711e9a6, type: 2}
       propertyPath: m_LocalPosition.y
@@ -556,6 +556,10 @@ Prefab:
       propertyPath: velocity.x
       value: -3
       objectReference: {fileID: 0}
+    - target: {fileID: 170036, guid: 75d9f27e5e9474901bacaf1ec711e9a6, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 75d9f27e5e9474901bacaf1ec711e9a6, type: 2}
   m_IsPrefabParent: 0
@@ -569,6 +573,7 @@ GameObject:
   - 4: {fileID: 943822004}
   - 114: {fileID: 943822005}
   - 114: {fileID: 943822006}
+  - 114: {fileID: 943822007}
   m_Layer: 0
   m_Name: RandomGenerator
   m_TagString: Untagged
@@ -594,17 +599,19 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 943822003}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce8d5382af73a4080a5d762264acf57d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gen: 1
+  gen: 0
   seconds: 0
   updateCounter: 0
   maxRange: 100
   playerPosition: {x: 0, y: 0}
   PenguinPlayer: {fileID: 1343886471}
+  lastGeneratedObj: {fileID: 0}
+  lastGeneratedObjPos: {x: 0, y: 0}
 --- !u!114 &943822006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -620,6 +627,22 @@ MonoBehaviour:
   - {fileID: 134864, guid: 5cb79d7c5d94a44dbbd97e86eaf22b73, type: 2}
   - {fileID: 134864, guid: 36fba8c34c0874e40b2ca2ffb02063cc, type: 2}
   - {fileID: 140950, guid: e6b2454197f12419e8385cd4e20fc855, type: 2}
+--- !u!114 &943822007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 943822003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62dcd5aee1cbc423288f179903a25c94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectOnlastGenPos: 0
+  playerPosition: {x: 0, y: 0}
+  PenguinPlayer: {fileID: 1343886471}
+  lastGeneratedObject: {fileID: 0}
+  lastGeneratedObjPos: {x: 0, y: 0}
 --- !u!1001 &1102987356
 Prefab:
   m_ObjectHideFlags: 0
@@ -629,11 +652,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 420218, guid: b294750ba3e5c405c94e8aa9963d17ff, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 7.88999987
+      value: 14.8000002
       objectReference: {fileID: 0}
     - target: {fileID: 420218, guid: b294750ba3e5c405c94e8aa9963d17ff, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.51000023
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 420218, guid: b294750ba3e5c405c94e8aa9963d17ff, type: 2}
       propertyPath: m_LocalPosition.z
@@ -879,6 +902,7 @@ GameObject:
   - 50: {fileID: 1343886474}
   - 61: {fileID: 1343886475}
   - 114: {fileID: 1343886476}
+  - 234: {fileID: 1343886478}
   m_Layer: 0
   m_Name: PenguinPlayer
   m_TagString: Player
@@ -938,7 +962,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!61 &1343886475
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -963,10 +987,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99359c91445fa466e9a6378a8f8ce9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerState: -1
   penguin: {fileID: 1343886474}
   startPoint: {fileID: 1327318415}
-  propsSpeed: 3
+  RandomPropsGenCtrl: {fileID: 0}
+--- !u!234 &1343886478
+SliderJoint2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1343886471}
+  m_Enabled: 1
+  m_CollideConnected: 1
+  m_ConnectedRigidBody: {fileID: 1343886474}
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -.000377566321, y: -1.74823284}
+  serializedVersion: 2
+  m_Angle: 90
+  m_UseMotor: 1
+  m_Motor:
+    m_MotorSpeed: 0
+    m_MaximumMotorForce: 10000
+  m_UseLimits: 0
+  m_TranslationLimits:
+    m_LowerTranslation: 0
+    m_UpperTranslation: 0
 --- !u!1 &1443599260
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,7 +1023,7 @@ GameObject:
   - 111: {fileID: 1443599261}
   m_Layer: 0
   m_Name: Wave-A
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1209,9 +1253,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -16.7247753, y: .0770598948}
+  m_Offset: {x: -13.2363062, y: .0770598948}
   serializedVersion: 2
-  m_Size: {x: 6.18675518, y: 17.2356586}
+  m_Size: {x: 3.4890151, y: 17.2356586}
 --- !u!114 &1900331340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1234,7 +1278,7 @@ GameObject:
   - 212: {fileID: 2062848671}
   m_Layer: 0
   m_Name: SG-SSS-FrontWave-b
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1288,7 +1332,7 @@ GameObject:
   - 212: {fileID: 2068689325}
   m_Layer: 0
   m_Name: SG-SSS-FrontWave-b
-  m_TagString: Untagged
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

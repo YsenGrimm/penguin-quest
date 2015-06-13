@@ -22,6 +22,11 @@ public class RestartOnCollision : MonoBehaviour {
 			}
 		}
 
+		else if(this.gameObject.tag == "Enemy") {
+			if (col.gameObject.tag == "Player") {
+				Application.LoadLevel (Application.loadedLevel); //restart game
+			}
+		}
 		else
 			Application.LoadLevel(Application.loadedLevel);
 	}
