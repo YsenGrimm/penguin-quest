@@ -13,6 +13,9 @@ public class RestartOnCollision : MonoBehaviour {
 				}
 		} else if (this.gameObject.tag == "Seal" || this.gameObject.tag == "Orca") {
 			if (col.gameObject.tag == "Player") {
+
+				//player dying animation
+
 				RestartGamePlay ();
 				}
 		} else if (this.gameObject.tag == "Spikes") {

@@ -47,13 +47,6 @@ public class PlayerController : MonoBehaviour {
 				 this.gameObject.GetComponent<Animator>().enabled=true;
 				}
 			else{
-			
-//				Vector2 velocityDir = penguin.velocity;
-//				if (velocityDir.y < 0)
-//					penguin.MoveRotation (-20.0f);
-//				else if (velocityDir.y > 0)
-//					penguin.MoveRotation (20.0f);
-
 				penguin.MoveRotation (20.0f); //face up
 				penguin.velocity=Vector2.zero;
 				penguin.angularVelocity = 0f;
@@ -89,7 +82,7 @@ public class PlayerController : MonoBehaviour {
 		//update position of player's parent, get world position
 
 		Vector3 worldPos = transform.TransformPoint(this.gameObject.transform.localPosition);
-		this.transform.parent.transform.position= new Vector3(worldPos.x,worldPos.y+1.0f,worldPos.z); 
+		this.transform.parent.transform.position= new Vector3(worldPos.x,worldPos.y+2.0f,worldPos.z); //hack
 		this.gameObject.GetComponent<Animator>().enabled=false;
 
 		isfirstJump = true;
