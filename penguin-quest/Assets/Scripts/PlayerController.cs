@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour {
 				// now move the start point pillar to left and start scroll
 				if(startPoint!=null){
 					startPoint.GetComponent<MoveProps>().enabled=true;
+					startPoint.GetComponent<MoveProps>().hasInitialObjects=true;
 					}
 
 				//set the timer 
@@ -32,11 +33,14 @@ public class PlayerController : MonoBehaviour {
 						for(int i =0;i<initialObjList.Count;i++){
 							GameObject obj = (GameObject)initialObjList[i];
 							obj.GetComponent<MoveProps>().enabled=true;
+							obj.GetComponent<MoveProps>().hasInitialObjects=true;
 						}
 				}
 
 			if(isfirstJump==false){
+
 				 this.gameObject.GetComponent<Animator>().enabled=true;
+				 this.gameObject.GetComponent<Animator>().speed=0.8f;
 				}
 			else{
 				penguin.MoveRotation (20.0f); //face up
@@ -56,8 +60,6 @@ public class PlayerController : MonoBehaviour {
 			randomObjCtrl.randomSelectionIndex();
 			randomFunc=true;
 		}
-
-
 	}
 
 	void setAngleDown(){
