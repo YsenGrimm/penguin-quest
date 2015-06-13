@@ -10,6 +10,7 @@ TagManager:
   - IceFloe
   - Enemy
   - Waves
+  - Spikes
   layers:
   - Default
   - TransparentFX

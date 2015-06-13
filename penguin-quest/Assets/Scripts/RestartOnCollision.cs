@@ -20,16 +20,16 @@ public class RestartOnCollision : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerStay2D(Collider2D col){
+	/*void OnTriggerStay2D(Collider2D col){
 		if (this.gameObject.tag == "Waves") {
 			if (col.gameObject.tag == "Player")
 				Debug.Log("touched waves");
 				RestartGamePlay ();
 			}
-		}
+		}*/
 
 	void RestartGamePlay(){
-		//Application.LoadLevel (Application.loadedLevel);
+		Application.LoadLevel (Application.loadedLevel);
 	}
 
 }
