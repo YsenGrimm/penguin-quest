@@ -30,15 +30,15 @@ public class RandomObjectsGenerator : MonoBehaviour {
 
 		case 0:{
 			lastGeneratedObject = Instantiate(Resources.Load("Prefabs/SealOnIce") as GameObject,new Vector3(15.0f,
-			                                                                           Random.Range(-2.3f, -3.3f),0),
+			                                                                           Random.Range(-4.5f, -5.5f),0),
 			                                                                      Quaternion.identity) as GameObject;
 
 			objectOnlastGenPos=true;
 
 		}break;
 		case 1:{
-			lastGeneratedObject = Instantiate(Resources.Load("Prefabs/PillarWithEgg") as GameObject,new Vector3(this.transform.localPosition.x,
-			                                                                                                    Random.Range(-3.5f,-4.5f),0),
+			lastGeneratedObject = Instantiate(Resources.Load("Prefabs/PillarWithEgg") as GameObject,new Vector3(10.0f,
+			                                                                                                    Random.Range(-4.0f,-4.5f),0),
 			                                                                             						 Quaternion.identity) as GameObject;
 			objectOnlastGenPos = true;
 		}break;
@@ -51,13 +51,13 @@ public class RandomObjectsGenerator : MonoBehaviour {
 				icefloeName = "IceFloe_Large";
 
 			lastGeneratedObject = Instantiate (Resources.Load ("Prefabs/" + icefloeName) as GameObject, new Vector3 (15.0f,
-			                                                                                   Random.Range (-2.3f, -3.3f),
+			                                                                                   Random.Range (-4.25f, -4.75f),
 			                                                                                    0),Quaternion.identity)  as GameObject;
 			objectOnlastGenPos=true;
 
 		}break;
 		case 3:{
-			lastGeneratedObject = Instantiate(Resources.Load("Prefabs/Orca") as GameObject,new Vector3(10.0f,Random.Range(-4.0f,-4.5f),0),
+			lastGeneratedObject = Instantiate(Resources.Load("Prefabs/Orca") as GameObject,new Vector3(10.0f,Random.Range(-4.5f,-5.0f),0),
 			                                  																Quaternion.identity) as GameObject;
 			objectOnlastGenPos=true;
 		}break;
