@@ -20,7 +20,7 @@ AnimatorController:
     m_DefaultWeight: 0
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_MultiThreadedStateMachine: 1
 --- !u!1101 &110155400
 AnimatorStateTransition:
@@ -58,7 +58,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_Motion: {fileID: 7400000, guid: 4f825ab0e9e4049b296f9a79193ad846, type: 2}
+  m_Motion: {fileID: 7400000, guid: 29cc842ec4df842799947d5ae0235fe1, type: 2}
   m_Tag: 
 --- !u!1107 &110745516
 AnimatorStateMachine:

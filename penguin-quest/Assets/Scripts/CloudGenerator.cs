@@ -21,7 +21,7 @@ public class CloudGenerator : MonoBehaviour {
 		                                        "oncompletetarget", gameObject,"oncompleteparams",selectedCloud,"easetype",iTween.EaseType.linear));
 		Invoke("createClouds",20.0f);
 	}
-	void Start (){
+	void Awake (){
 		createClouds();
 		}
 }

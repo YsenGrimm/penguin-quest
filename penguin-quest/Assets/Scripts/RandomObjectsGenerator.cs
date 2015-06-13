@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class RandomObjectsGenerator : MonoBehaviour {
 
@@ -8,6 +9,8 @@ public class RandomObjectsGenerator : MonoBehaviour {
 	public GameObject PenguinPlayer;
 	public GameObject lastGeneratedObject;
 	public Vector2 lastGeneratedObjPos;
+
+	List<GameObject> generatedObjList = new List<GameObject>();
 
 	int index = 0;
 	// Use this for initialization
@@ -19,7 +22,7 @@ public class RandomObjectsGenerator : MonoBehaviour {
 	void randomSelectionIndex(){	
 
 		CancelInvoke("randomSelectionIndex");
-		index  = Random.Range(0,3);
+		index  = Random.Range(0,4);
 		objectOnlastGenPos=false;
 		Invoke("GenerateObjectsRandomly",0.5f);
 	}
@@ -58,17 +61,26 @@ public class RandomObjectsGenerator : MonoBehaviour {
 
 		}break;
 		case 3:{
-			Invoke("GenerateIceFloes",5.0f);
+			lastGeneratedObject = Instantiate(Resources.Load("Prefabs/Orca") as GameObject,new Vector3(10.0f,Random.Range(-4.0f,-4.5f),0),
+			                                  																Quaternion.identity) as GameObject;
+			objectOnlastGenPos=true;
 		}break;
 
 		default: 
 			objectOnlastGenPos=false; break;
 		}
 
+		generatedObjList.Add(lastGeneratedObject);
 		CancelInvoke ("GenerateObjectsRandomly");
 		Invoke("randomSelectionIndex",3.0f);
 
-
 	}
+
+	public void removeObjFromList(GameObject obj){
+		if (generatedObjList.Count > 0) {
+			generatedObjList.Remove(obj);
+		}
+	}
+
 
 }

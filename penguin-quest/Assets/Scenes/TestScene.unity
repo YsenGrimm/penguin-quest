@@ -600,15 +600,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 943822003}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce8d5382af73a4080a5d762264acf57d, type: 3}
+  m_Script: {fileID: 11500000, guid: 62dcd5aee1cbc423288f179903a25c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gen: 1
-  seconds: 0
-  updateCounter: 0
-  maxRange: 100
+  objectOnlastGenPos: 0
   playerPosition: {x: 0, y: 0}
   PenguinPlayer: {fileID: 1343886471}
+  lastGeneratedObject: {fileID: 0}
+  lastGeneratedObjPos: {x: 0, y: 0}
 --- !u!114 &943822006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -967,10 +966,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99359c91445fa466e9a6378a8f8ce9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerState: -1
   penguin: {fileID: 1343886474}
   startPoint: {fileID: 1327318415}
-  propsSpeed: 3
 --- !u!1 &1443599260
 GameObject:
   m_ObjectHideFlags: 0
