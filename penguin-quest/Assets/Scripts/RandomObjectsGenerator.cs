@@ -20,7 +20,7 @@ public class RandomObjectsGenerator : MonoBehaviour {
 		CancelInvoke("randomSelectionIndex");
 		index  = Random.Range(0,5);
 		objectOnlastGenPos=false;
-		Invoke("GenerateObjectsRandomly",0.5f);
+		Invoke("GenerateObjectsRandomly",0.1f);
 	}
 
 
@@ -77,7 +77,7 @@ public class RandomObjectsGenerator : MonoBehaviour {
 
 		generatedObjList.Add(lastGeneratedObject);
 		CancelInvoke ("GenerateObjectsRandomly");
-		Invoke("randomSelectionIndex",3.0f);
+		Invoke("randomSelectionIndex",2.0f);
 
 	}
 
