@@ -9,7 +9,7 @@ public class MoveProps : MonoBehaviour {
 	
 	void Start () {
 		if (this.gameObject.tag.Equals("Orca"))
-			xSpeed = -3.0f;
+			xSpeed = -5.0f;
 //		else if (this.gameObject.tag.Equals("Eggs"))
 //			xSpeed = -3;
 //		else if (this.gameObject.tag.Equals("Seal"))
