@@ -10,10 +10,9 @@ GameObject:
   - 4: {fileID: 424556}
   - 212: {fileID: 21281668}
   - 50: {fileID: 5018210}
-  - 61: {fileID: 6188318}
   - 114: {fileID: 11482458}
-  - 234: {fileID: 23443868}
   - 95: {fileID: 9537136}
+  - 60: {fileID: 6016824}
   m_Layer: 0
   m_Name: PlayerPenguin
   m_TagString: Player
@@ -28,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.80000019, y: -1.26999998, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: .5, y: .5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -48,8 +47,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
---- !u!61 &6188318
-BoxCollider2D:
+--- !u!60 &6016824
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -58,9 +57,66 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: .119536176, y: -.0132817971}
-  serializedVersion: 2
-  m_Size: {x: 2.00779939, y: 3.36718154}
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: .654999971, y: -1.61000001}
+      - {x: .894999981, y: -1.49000001}
+      - {x: .88499999, y: -1.46000004}
+      - {x: .764999986, y: -1.41999996}
+      - {x: .685000002, y: -1.39999998}
+      - {x: .855000019, y: -1.25999999}
+      - {x: .985000014, y: -1.04999995}
+      - {x: 1.05499995, y: -.800000012}
+      - {x: 1.07500005, y: -.540000021}
+      - {x: 1.08500004, y: -.330000013}
+      - {x: 1.08500004, y: .230000004}
+      - {x: 1.07500005, y: .349999994}
+      - {x: 1.05499995, y: .479999989}
+      - {x: .985000014, y: .870000005}
+      - {x: 1.02499998, y: .899999976}
+      - {x: 1.01499999, y: .930000007}
+      - {x: .894999981, y: 1.01999998}
+      - {x: .824999988, y: 1.16999996}
+      - {x: .725000024, y: 1.32000005}
+      - {x: .61500001, y: 1.44000006}
+      - {x: .414999992, y: 1.58000004}
+      - {x: .264999986, y: 1.64999998}
+      - {x: .144999996, y: 1.66999996}
+      - {x: -.0549999997, y: 1.66999996}
+      - {x: -.135000005, y: 1.64999998}
+      - {x: -.305000007, y: 1.55999994}
+      - {x: -.375, y: 1.50999999}
+      - {x: -.504999995, y: 1.38999999}
+      - {x: -.584999979, y: 1.27999997}
+      - {x: -.654999971, y: 1.19000006}
+      - {x: -.754999995, y: 1.00999999}
+      - {x: -.834999979, y: .810000002}
+      - {x: -.88499999, y: .579999983}
+      - {x: -.915000021, y: .469999999}
+      - {x: -.935000002, y: .310000002}
+      - {x: -.935000002, y: -.600000024}
+      - {x: -.925000012, y: -.730000019}
+      - {x: -.894999981, y: -.910000026}
+      - {x: -.875, y: -.99000001}
+      - {x: -.824999988, y: -1.15999997}
+      - {x: -1.04499996, y: -1.16999996}
+      - {x: -1.06500006, y: -1.21000004}
+      - {x: -1.06500006, y: -1.25}
+      - {x: -1.02499998, y: -1.27999997}
+      - {x: -.904999971, y: -1.34000003}
+      - {x: -.61500001, y: -1.36000001}
+      - {x: -.545000017, y: -1.39999998}
+      - {x: -.405000001, y: -1.46000004}
+      - {x: -.305000007, y: -1.5}
+      - {x: -.0450000018, y: -1.52999997}
+      - {x: .0649999976, y: -1.52999997}
+      - {x: .135000005, y: -1.61000001}
+      - {x: .264999986, y: -1.71000004}
+      - {x: .36500001, y: -1.71000004}
+      - {x: .595000029, y: -1.64999998}
+      - {x: .555000007, y: -1.58000004}
+      - {x: .61500001, y: -1.61000001}
 --- !u!95 &9537136
 Animator:
   serializedVersion: 3
@@ -68,7 +124,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151820}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 21f9d99f6e4494ecca18a5310063712e, type: 2}
   m_CullingMode: 0
@@ -89,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99359c91445fa466e9a6378a8f8ce9f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerObj: {fileID: 0}
   penguin: {fileID: 5018210}
   startPoint: {fileID: 0}
   initialObjList:
@@ -97,7 +154,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   jumpForce: 250
+  isDead: 0
 --- !u!212 &21281668
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -121,30 +183,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 0e76875b3e9e1481f9eadeef71badbca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!234 &23443868
-SliderJoint2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151820}
-  m_Enabled: 1
-  m_CollideConnected: 1
-  m_ConnectedRigidBody: {fileID: 5018210}
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -.000377566321, y: -1.74823284}
-  serializedVersion: 2
-  m_Angle: 90
-  m_UseMotor: 1
-  m_Motor:
-    m_MotorSpeed: 0
-    m_MaximumMotorForce: 10000
-  m_UseLimits: 0
-  m_TranslationLimits:
-    m_LowerTranslation: 0
-    m_UpperTranslation: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
