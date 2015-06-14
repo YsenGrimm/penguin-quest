@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour {
 	
 	// Use this for initialization;
 	public GameObject timerObj;
+	public GameObject eggCounterObj;
 	public Rigidbody2D penguin;
 	public GameObject startPoint;
 
@@ -16,11 +17,38 @@ public class PlayerController : MonoBehaviour {
 	bool hasAngleSet = false;
 	public float jumpForce=100f;
 	public bool isDead = false;
+
+	void UpdateTheGameStats(){
+
+		//check for the last score
+		float lastTime 		= PlayerPrefs.GetFloat ("Time");
+		int lastEggScore 	= PlayerPrefs.GetInt ("Eggs");
+
+		//get time from timerObj
+		float timeElapsed = timerObj.GetComponent<CountDownTimer>().time;
+		int   totalEggs   = eggCounterObj.GetComponent<Counter>().totalEggs;
+
+		if ((lastTime < timeElapsed) && (lastEggScore > totalEggs)) {
+			PlayerPrefs.SetFloat ("Time", timeElapsed);
+			PlayerPrefs.SetInt ("Eggs", totalEggs);
+			}
+		//to display on highscore use this
+
+		/*int minutes = (int)time / 60;
+		int seconds = (int)time % 60;
+		//displaying in the timer text
+		this.GetComponent<Text>().text = string.Format("{0:00}:{1:00}", minutes, seconds);*/
+
+	}
+
 	// Update is called once per frame
 	void Update () {
 	
-		if (isDead == true)
+		if (isDead == true) {
+			UpdateTheGameStats();
 			return;
+			}
+			
 
 		if(Input.GetKeyUp("space")){
 				hasAngleSet=false;

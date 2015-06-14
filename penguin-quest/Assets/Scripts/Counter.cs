@@ -4,9 +4,9 @@ using System.Collections;
 
 public class Counter : MonoBehaviour {
 
-	int counter =0;
+	public int totalEggs =0;
 	public void IncrementCounterByOne(){
-		counter++;
-		this.GetComponent<Text> ().text = counter.ToString ();
+		totalEggs++;
+		this.GetComponent<Text> ().text = totalEggs.ToString ();
 	}
 }
