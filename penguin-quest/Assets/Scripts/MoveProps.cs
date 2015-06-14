@@ -24,4 +24,11 @@ public class MoveProps : MonoBehaviour {
 		velocity = new Vector2(speed, 0);
 		GetComponent<Rigidbody2D>().velocity=velocity;
 	}
+
+	public void stopVelocity(){
+		GetComponent<Rigidbody2D>().velocity=Vector2.zero;
+		GetComponent<Rigidbody2D>().angularVelocity=0f;
+
+	}
+
 }

@@ -130,5 +130,14 @@ public class RandomObjectsGenerator : MonoBehaviour {
 		}
 	}
 
+	public void disableAllMoveScripts(){
+		if (generatedObjList.Count > 0) {
+			for (int i=0; i<generatedObjList.Count; i++) {
+				MoveProps script = (MoveProps)generatedObjList [i].GetComponent<MoveProps> ();
+				script.stopVelocity();
+				//script.enabled = false;
+			}
+		}
+	}
 
 }

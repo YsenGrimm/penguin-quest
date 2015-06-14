@@ -77,6 +77,20 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
+
+	public void disableAllMoveScripts(){
+		if (initialObjList.Count > 0) {
+			for (int i=0; i<initialObjList.Count; i++) {
+				MoveProps script = (MoveProps)initialObjList [i].GetComponent<MoveProps> ();
+				script.stopVelocity();
+				//script.enabled = false;
+			}
+		}
+
+		penguin.velocity = Vector2.zero;
+		penguin.angularVelocity = 0f;
+	}
+
 	public void changeTextureToSlide(){
 		this.gameObject.GetComponent<SpriteRenderer> ().sprite = Resources.Load ("Art/penguin_sliding", typeof(Sprite)) as Sprite;
 		PolygonCollider2D playerCol = this.gameObject.GetComponent<PolygonCollider2D>();
