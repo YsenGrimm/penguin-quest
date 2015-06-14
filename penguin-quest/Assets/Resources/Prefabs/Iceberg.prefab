@@ -13,9 +13,10 @@ GameObject:
   - 60: {fileID: 6097402}
   - 50: {fileID: 5006022}
   - 114: {fileID: 11452650}
+  - 114: {fileID: 11431360}
   m_Layer: 0
   m_Name: Iceberg
-  m_TagString: IceFloe
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,6 +132,17 @@ PolygonCollider2D:
       - {x: -4.6500001, y: -2.55999994}
       - {x: 4.42000008, y: -2.55999994}
       - {x: 4.42999983, y: -2.53999996}
+--- !u!114 &11431360
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae5cfe3a1d7e4b679c577912120f1f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11452650
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,6 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e005313d047414b45bbbe9409b45c3b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xSpeed: 0
+  hasInitialObjects: 0
 --- !u!114 &11481986
 MonoBehaviour:
   m_ObjectHideFlags: 1

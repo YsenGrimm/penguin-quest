@@ -46,5 +46,4 @@ public class WavesCollision : MonoBehaviour {
 		PlayerController playerCtrl = GameObject.FindWithTag("Player").GetComponent<PlayerController> ();
 		playerCtrl.RestartGamePlay();
 	}
-
 }

@@ -442,9 +442,10 @@ GameObject:
   - 60: {fileID: 412058267}
   - 50: {fileID: 412058266}
   - 114: {fileID: 412058265}
+  - 114: {fileID: 412058270}
   m_Layer: 0
   m_Name: Iceberg
-  m_TagString: IceFloe
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -605,6 +606,17 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: fe208a1f35ecd4ac18af84d6b192e983, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &412058270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 412058264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bae5cfe3a1d7e4b679c577912120f1f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &481505300
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,6 +695,7 @@ MonoBehaviour:
   istimeOut: 0
   minutes: 0
   seconds: 0
+  prevSeconds: 0
 --- !u!114 &489582138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2854,6 +2867,7 @@ GameObject:
   - 61: {fileID: 1900331338}
   - 61: {fileID: 1900331339}
   - 114: {fileID: 1900331340}
+  - 61: {fileID: 1900331341}
   m_Layer: 0
   m_Name: Background
   m_TagString: Finish
@@ -2949,6 +2963,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3192abd77539493b9ffcbd4cba32550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &1900331341
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1900331334}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 15.5429564, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 4.90649748, y: 16}
 --- !u!1 &1910598503
 GameObject:
   m_ObjectHideFlags: 0

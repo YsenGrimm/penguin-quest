@@ -18,7 +18,15 @@ public class MoveProps : MonoBehaviour {
 		else
 			xSpeed = -3.0f;
 		AnimateTowardsLeft (xSpeed);
-	}
+}
+
+//	public void startMoving(){
+//		if (hasInitialObjects == true)
+//			xSpeed = -3.0f;
+//		else
+//			xSpeed = incrementSpeedOverTime();
+//		AnimateTowardsLeft (xSpeed);
+//	}
 
 	public void AnimateTowardsLeft (float speed) {
 		velocity = new Vector2(speed, 0);
@@ -28,7 +36,11 @@ public class MoveProps : MonoBehaviour {
 	public void stopVelocity(){
 		GetComponent<Rigidbody2D>().velocity=Vector2.zero;
 		GetComponent<Rigidbody2D>().angularVelocity=0f;
-
 	}
+
+//	public float incrementSpeedOverTime(){
+//		return (xSpeed-0.5f); 
+//
+//	}
 
 }
