@@ -151,7 +151,7 @@ public class PlayerController : MonoBehaviour {
 		//update position of player's parent, get world position
 
 		Vector3 worldPos = transform.TransformPoint(this.gameObject.transform.localPosition);
-		this.transform.parent.transform.position= new Vector3(worldPos.x,worldPos.y+2.0f,worldPos.z); //hack
+		this.transform.parent.transform.position= new Vector3(worldPos.x,worldPos.y+1.75f,worldPos.z); //hack
 		this.gameObject.GetComponent<Animator>().enabled=false;
 
 		isfirstJump = true;
