@@ -32,12 +32,13 @@ public class RestartOnCollision : MonoBehaviour {
 					playerCtrl.stopVelocityAndRot ();
 		
 				//Debug.Log ("touched seal");
-				Invoke ("RestartGamePlay", 1.0f);
+				Invoke ("restartGamePlay", 1.0f);
 			}
 		}
 
-	void RestartGamePlay(){
-		Application.LoadLevel (Application.loadedLevel);
+	void restartGamePlay(){
+		PlayerController playerCtrl = GameObject.FindWithTag("Player").GetComponent<PlayerController> ();
+		playerCtrl.RestartGamePlay();
 	}
 
 }

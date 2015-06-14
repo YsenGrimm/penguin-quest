@@ -17,6 +17,7 @@ public class MenuController : MonoBehaviour {
 	}
 	
 	public void PlayGame () {
+		PlayerPrefs.SetInt ("NumOfTries", 1);
 		Application.LoadLevel("GamePlay_Level1");
 	}
 	

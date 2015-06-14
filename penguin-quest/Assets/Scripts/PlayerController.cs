@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
 	bool hasAngleSet = false;
 	public float jumpForce=100f;
 	public bool isDead = false;
-
+	
 	void UpdateTheGameStats(){
 
 		//check for the last score
@@ -32,13 +32,22 @@ public class PlayerController : MonoBehaviour {
 			PlayerPrefs.SetFloat ("Time", timeElapsed);
 			PlayerPrefs.SetInt ("Eggs", totalEggs);
 			}
-		//to display on highscore use this
 
-		/*int minutes = (int)time / 60;
-		int seconds = (int)time % 60;
-		//displaying in the timer text
-		this.GetComponent<Text>().text = string.Format("{0:00}:{1:00}", minutes, seconds);*/
+	}
+	
+	public void RestartGamePlay(){
 
+		UpdateTheGameStats();
+
+		int tries = PlayerPrefs.GetInt ("NumOfTries");
+		if (tries >= 3) {
+			PlayerPrefs.SetInt ("NumOfTries", 1);
+			Application.LoadLevel ("Highscore");
+		} else {
+			tries++;
+			PlayerPrefs.SetInt ("NumOfTries", tries);
+			Application.LoadLevel (Application.loadedLevel); //same game play
+		}
 	}
 
 	// Update is called once per frame

@@ -38,12 +38,13 @@ public class WavesCollision : MonoBehaviour {
 			RandomObjectsGenerator randomObjCtrl = GameObject.Find("RandomGenerator").GetComponent<RandomObjectsGenerator>();
 			randomObjCtrl.disableAllMoveScripts();
 
-			Invoke("RestartGamePlay",waterParticles.GetComponent<ParticleSystem>().duration+0.5f);
+			Invoke("restartGamePlay",waterParticles.GetComponent<ParticleSystem>().duration+0.5f);
 		}
 	}
 
-	void RestartGamePlay(){
-		Application.LoadLevel (Application.loadedLevel);
+	void restartGamePlay(){
+		PlayerController playerCtrl = GameObject.FindWithTag("Player").GetComponent<PlayerController> ();
+		playerCtrl.RestartGamePlay();
 	}
 
 }
