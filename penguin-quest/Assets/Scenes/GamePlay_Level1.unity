@@ -229,6 +229,10 @@ Prefab:
       propertyPath: initialObjList.Array.data[8]
       value: 
       objectReference: {fileID: 1964414061}
+    - target: {fileID: 11482458, guid: 59c9b0723d18044f4b834cce7bae57ad, type: 2}
+      propertyPath: eggCounterObj
+      value: 
+      objectReference: {fileID: 1647731135}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59c9b0723d18044f4b834cce7bae57ad, type: 2}
   m_IsPrefabParent: 0
@@ -2668,6 +2672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2f694b90f9d401a9a9aad754ecf5db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalEggs: 0
 --- !u!1 &1822641547
 GameObject:
   m_ObjectHideFlags: 0
