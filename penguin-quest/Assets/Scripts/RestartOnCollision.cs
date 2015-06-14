@@ -5,27 +5,21 @@ public class RestartOnCollision : MonoBehaviour {
 	
 	void OnCollisionEnter2D(Collision2D col)
 	{ 
-		if (this.gameObject.tag == "Seal" ) { //|| this.gameObject.tag == "Orca" // lets not collide with orca 
-			if (col.gameObject.tag == "Player") {
+		if (this.gameObject.tag == "Seal" && col.gameObject.tag == "Player") { //|| this.gameObject.tag == "Orca" // lets not collide with orca 
 				//player dying animation
-				Debug.Log("touched seal or orca");
+				Debug.Log ("touched seal");
 				RestartGamePlay ();
-				}
-		} else if (this.gameObject.tag == "Spikes") {
-			if (col.gameObject.tag == "Player") {
-				//play some Sfx of penguin scream then restart
-				Debug.Log("touched spikes");
-				RestartGamePlay ();
-			}
-		}
-	}
 
-	void OnTriggerStay2D(Collider2D col){
-		if (this.gameObject.tag == "Waves") {
-			if (col.gameObject.tag == "Player")
-				Debug.Log("touched waves");
+		} else if (this.gameObject.tag == "Spikes" && col.gameObject.tag == "Player") {
+				//play some Sfx of penguin scream then restart
+				Debug.Log ("touched spikes");
 				RestartGamePlay ();
-			}
+
+		}
+//			else if (this.gameObject.tag == "Finish" && col.gameObject.tag == "Player" && col.gameObject.transform.localPosition.y <-3.5f) {
+//				Debug.Log ("touched water");
+//				RestartGamePlay ();
+//			}
 		}
 
 	void RestartGamePlay(){

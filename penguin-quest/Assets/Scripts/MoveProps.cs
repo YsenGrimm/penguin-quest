@@ -14,7 +14,7 @@ public class MoveProps : MonoBehaviour {
 
 	void Start(){
 		if (hasInitialObjects == false)
-			xSpeed = Random.Range (-3.0f, -6.0f);
+			xSpeed = Random.Range (-5.0f, -6.0f);
 		else
 			xSpeed = -3.0f;
 		AnimateTowardsLeft (xSpeed);
@@ -24,4 +24,11 @@ public class MoveProps : MonoBehaviour {
 		velocity = new Vector2(speed, 0);
 		GetComponent<Rigidbody2D>().velocity=velocity;
 	}
+
+	public void stopVelocity(){
+		GetComponent<Rigidbody2D>().velocity=Vector2.zero;
+		GetComponent<Rigidbody2D>().angularVelocity=0f;
+
+	}
+
 }
