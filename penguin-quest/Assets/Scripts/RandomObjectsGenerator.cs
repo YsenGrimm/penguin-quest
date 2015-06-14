@@ -60,7 +60,14 @@ public class RandomObjectsGenerator : MonoBehaviour {
 		switch (index) {
 
 		case 0:{
-			lastGeneratedObject = Instantiate(Resources.Load("Prefabs/SealOnIce") as GameObject,new Vector3(xPos,
+			int rand = Random.Range (0, 2);
+			string fileName = "";
+			if (rand == 0)
+				fileName = "SealOnIce";
+			else
+				fileName = "SealOnIceAnim";
+
+			lastGeneratedObject = Instantiate(Resources.Load("Prefabs/"+fileName) as GameObject,new Vector3(xPos,
                                                                            Random.Range(-4.5f, -4.65f),0),
                                                                       Quaternion.identity) as GameObject;
 

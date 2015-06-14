@@ -9,6 +9,8 @@ public class EggController : MonoBehaviour {
 			myAnim.enabled=false;
 
 			//increment counter
+			SoundController soundCtrl = Camera.main.GetComponent<SoundController>();
+			soundCtrl.playSoundEffect("Collect");
 
 			GameObject counterText = GameObject.Find("EggCounter");
 			counterText.GetComponent<Counter>().IncrementCounterByOne();

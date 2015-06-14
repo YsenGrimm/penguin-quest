@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour {
 
 				//set the timer 
 				 timerObj.GetComponent<CountDownTimer>().enabled=true;
-
 				if(initialObjList.Count>0){
 						for(int i =0;i<initialObjList.Count;i++){
 							GameObject obj = (GameObject)initialObjList[i];
@@ -37,12 +36,20 @@ public class PlayerController : MonoBehaviour {
 						}
 				}
 
+
 			if(isfirstJump==false){
 
-				 this.gameObject.GetComponent<Animator>().enabled=true;
-				 this.gameObject.GetComponent<Animator>().speed=0.8f;
+				SoundController soundCtrl = Camera.main.GetComponent<SoundController>();
+				soundCtrl.playSoundEffect("Jump1");
+
+				this.gameObject.GetComponent<Animator>().enabled=true;
+				this.gameObject.GetComponent<Animator>().speed=0.8f;
 				}
 			else{
+
+				SoundController soundCtrl = Camera.main.GetComponent<SoundController>();
+				soundCtrl.playSoundEffect("Jump2");
+
 				penguin.MoveRotation (20.0f); //face up
 				penguin.velocity=Vector2.zero;
 				penguin.angularVelocity = 0f;
@@ -50,6 +57,10 @@ public class PlayerController : MonoBehaviour {
 				if(hasAngleSet==false)
 					Invoke("setAngleDown",0.5f);
 			}
+
+
+
+
 		}
 
 		if(randomFunc==false && initialObjList.Count<=3){
