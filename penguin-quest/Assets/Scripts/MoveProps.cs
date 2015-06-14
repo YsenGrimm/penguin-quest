@@ -14,7 +14,7 @@ public class MoveProps : MonoBehaviour {
 
 	void Start(){
 		if (hasInitialObjects == false)
-			xSpeed = Random.Range (-3.0f, -6.0f);
+			xSpeed = Random.Range (-5.0f, -6.0f);
 		else
 			xSpeed = -3.0f;
 		AnimateTowardsLeft (xSpeed);

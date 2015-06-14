@@ -56,7 +56,7 @@ public class RandomObjectsGenerator : MonoBehaviour {
 
 	void GenerateObjectsRandomly(){
 
-		float xPos = 10.0f + xContentSize;
+		float xPos = 7.5f + xContentSize;
 		switch (index) {
 
 		case 0:{
