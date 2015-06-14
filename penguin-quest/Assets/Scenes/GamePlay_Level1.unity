@@ -1541,7 +1541,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 871921474}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
@@ -1894,9 +1894,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpSfx1: {fileID: 8300000, guid: 38ecbab17a391478ea262d10b0e0f72f, type: 3}
   jumpSfx2: {fileID: 8300000, guid: bd201b4978b444c1580cb4afd1bd9717, type: 3}
-  celebSfx: {fileID: 8300000, guid: 4d96d47ebda594053bfa3aa889bfb55b, type: 3}
+  collectSfx: {fileID: 8300000, guid: 01167f504421546e19a89b60a7ba2d98, type: 3}
   waterSplash: {fileID: 8300000, guid: a647fe0b8fb8b4b76b59afadf1756a1c, type: 3}
-  dying: {fileID: 8300000, guid: d7e3144ce6e4642bea17303fbd9438a6, type: 3}
+  die: {fileID: 8300000, guid: f5cc627bb866d4415931fe9385b15914, type: 3}
   aSource: {fileID: 914869643}
 --- !u!82 &914869643
 AudioSource:
@@ -4047,7 +4047,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 2080026801}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:

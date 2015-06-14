@@ -3,23 +3,27 @@ using System.Collections;
 
 public class RestartOnCollision : MonoBehaviour {
 	
-	void OnCollisionEnter2D(Collision2D col)
+	//void OnCollisionEnter2D(Collision2D col)
+	void OnTriggerEnter2D(Collider2D col)
 	{ 
-		if (this.gameObject.tag == "Seal" && col.gameObject.tag == "Player") { //|| this.gameObject.tag == "Orca" // lets not collide with orca 
+		if ((this.gameObject.tag == "Seal" || this.gameObject.tag == "Spikes")&& col.gameObject.tag == "Player") { 
+
+			//|| this.gameObject.tag == "Orca" // lets not collide with orca 
+
 				//player dying animation
-				Debug.Log ("touched seal");
-				RestartGamePlay ();
+				SoundController soundCtrl = Camera.main.GetComponent<SoundController>();
+				soundCtrl.playSoundEffect("Die");
 
-		} else if (this.gameObject.tag == "Spikes" && col.gameObject.tag == "Player") {
-				//play some Sfx of penguin scream then restart
-				Debug.Log ("touched spikes");
-				RestartGamePlay ();
+			//stop all  movements of props
+				PlayerController playerCtrl = col.gameObject.GetComponent<PlayerController>();
+				playerCtrl.disableAllMoveScripts();
+			
+				RandomObjectsGenerator randomObjCtrl = GameObject.Find("RandomGenerator").GetComponent<RandomObjectsGenerator>();
+				randomObjCtrl.disableAllMoveScripts();
 
-		}
-//			else if (this.gameObject.tag == "Finish" && col.gameObject.tag == "Player" && col.gameObject.transform.localPosition.y <-3.5f) {
-//				Debug.Log ("touched water");
-//				RestartGamePlay ();
-//			}
+				//Debug.Log ("touched seal");
+				Invoke("RestartGamePlay",0.75f);
+			}
 		}
 
 	void RestartGamePlay(){
