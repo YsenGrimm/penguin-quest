@@ -533,6 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8feca8c811d64684b0a8f48c892dacd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScoreText: {fileID: 1936674433}
 --- !u!4 &1585582753
 Transform:
   m_ObjectHideFlags: 0
@@ -577,17 +578,17 @@ MonoBehaviour:
   m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
   m_FontData:
     m_Font: {fileID: 12800000, guid: 71c3d201213744a258e7daffa46b8e53, type: 3}
-    m_FontSize: 96
-    m_FontStyle: 0
+    m_FontSize: 120
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: "The best player survied \n00 : 00 minutes and \ncollected 0 Eggs"
 --- !u!222 &1936674434
 CanvasRenderer:
   m_ObjectHideFlags: 0
