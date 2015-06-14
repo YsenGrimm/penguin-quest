@@ -8,8 +8,8 @@ public class ScoreController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		float time 		= PlayerPrefs.GetFloat("Time");
-		int eggScore 	= PlayerPrefs.GetInt("Eggs");
+		float time = PlayerPrefs.GetFloat("Time");
+		int eggScore = PlayerPrefs.GetInt("Eggs");
 		int minutes = (int)time / 60;
 		int seconds = (int)time % 60;
 		

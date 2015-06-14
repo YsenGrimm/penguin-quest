@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour {
 		float timeElapsed = timerObj.GetComponent<CountDownTimer>().time;
 		int   totalEggs   = eggCounterObj.GetComponent<Counter>().totalEggs;
 
-		if ((lastTime < timeElapsed) && (lastEggScore > totalEggs)) {
+		if ((lastTime < timeElapsed) && (lastEggScore < totalEggs)) {
 			PlayerPrefs.SetFloat ("Time", timeElapsed);
 			PlayerPrefs.SetInt ("Eggs", totalEggs);
 			}
