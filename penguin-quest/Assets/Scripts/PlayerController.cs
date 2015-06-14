@@ -15,9 +15,13 @@ public class PlayerController : MonoBehaviour {
 	bool isfirstJump = false;
 	bool hasAngleSet = false;
 	public float jumpForce=100f;
+	public bool isDead = false;
 	// Update is called once per frame
 	void Update () {
 	
+		if (isDead == true)
+			return;
+
 		if(Input.GetKeyUp("space")){
 				hasAngleSet=false;
 				// now move the start point pillar to left and start scroll
@@ -97,13 +101,21 @@ public class PlayerController : MonoBehaviour {
 				//script.enabled = false;
 			}
 		}
+	}
 
+	public void stopVelocityAndRot(){
+		penguin.MoveRotation (0);
 		penguin.velocity = Vector2.zero;
 		penguin.angularVelocity = 0f;
 	}
 
+	public void playdieAnimation(Vector3 pos){
+		this.gameObject.GetComponent<SpriteRenderer> ().sprite = Resources.Load ("Art/penguin_sliding_dead", typeof(Sprite)) as Sprite;
+		penguin.isKinematic = true;
+		}
+
 	public void changeTextureToSlide(){
-		this.gameObject.GetComponent<SpriteRenderer> ().sprite = Resources.Load ("Art/penguin_sliding", typeof(Sprite)) as Sprite;
+		this.gameObject.GetComponent<SpriteRenderer> ().sprite = Resources.Load ("Art/penguin_sliding_sledge", typeof(Sprite)) as Sprite;
 		PolygonCollider2D playerCol = this.gameObject.GetComponent<PolygonCollider2D>();
 		DestroyObject(playerCol);
 
