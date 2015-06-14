@@ -56,7 +56,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 181752}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
@@ -218,6 +218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e005313d047414b45bbbe9409b45c3b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xSpeed: 0
+  hasInitialObjects: 0
 --- !u!114 &11483954
 MonoBehaviour:
   m_ObjectHideFlags: 1
